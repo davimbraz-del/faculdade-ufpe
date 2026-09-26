@@ -24,27 +24,6 @@ const onScroll = () => header.classList.toggle("is-scrolled", window.scrollY > 1
 window.addEventListener("scroll", onScroll, { passive: true });
 onScroll();
 
-// Animação de entrada das seções
-const revealEls = document.querySelectorAll(
-  ".section__head, .card, .feature, .step, .testimonial, .about__inner > *, .highlight__inner > *, .faq details"
-);
-if ("IntersectionObserver" in window) {
-  const io = new IntersectionObserver(
-    (entries) =>
-      entries.forEach((e) => {
-        if (e.isIntersecting) {
-          e.target.classList.add("is-visible");
-          io.unobserve(e.target);
-        }
-      }),
-    { threshold: 0.15 }
-  );
-  revealEls.forEach((el) => {
-    el.classList.add("reveal");
-    io.observe(el);
-  });
-}
-
 // Máscara simples de CNPJ
 const cnpj = document.querySelector('input[name="cnpj"]');
 cnpj.addEventListener("input", () => {
@@ -59,6 +38,7 @@ cnpj.addEventListener("input", () => {
 // Formulário -> WhatsApp
 const form = document.getElementById("form-contato");
 const msg = form.querySelector(".form__msg");
+const link = form.querySelector(".form__link");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -85,7 +65,10 @@ form.addEventListener("submit", (e) => {
     `*Cidade:* ${data.cidade}\n` +
     `*Interesse:* ${data.interesse}`;
 
-  window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(text)}`, "_blank", "noopener");
+  const url = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(text)}`;
+  link.href = url;
+  link.hidden = false;
+  link.focus();
 });
 
 // Ano no rodapé
