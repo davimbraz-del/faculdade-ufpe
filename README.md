@@ -12,6 +12,6 @@ Site estático (HTML + CSS + JS puro). Para ver, abra o `index.html` no navegado
 - `assets/logo.jpg` — logo
 
 ## Personalizar
-- **WhatsApp:** troque `5581900000000` em `js/main.js` e nos links `wa.me` do `index.html`.
+- **WhatsApp:** o número é `558191176535` — para trocar, altere em `js/main.js` e nos links `wa.me` do `index.html`.
 - **E-mail e horário:** seção `#contato` do `index.html`.
 - **Números do hero e depoimentos:** são exemplos — substitua pelos dados reais.
