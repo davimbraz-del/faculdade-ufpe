@@ -1,5 +1,5 @@
 // Número do WhatsApp da distribuidora (DDI + DDD + número, só dígitos)
-const WHATSAPP = "558191176535";
+const WHATSAPP = "5581900000000";
 
 // Menu mobile
 const toggle = document.querySelector(".nav-toggle");
